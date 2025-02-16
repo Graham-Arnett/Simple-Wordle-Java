@@ -1,5 +1,6 @@
 package main;
 import java.util.Scanner;
+import java.util.Random;
 
 public class WordleGame {
 
@@ -17,7 +18,15 @@ public class WordleGame {
 		int turns = 0;
 		
 		boolean victory = false;//ok, in java its boolean not bool, noted
+		String choice;
+		Random random = new Random();
 		
+		do 
+		{
+			
+		System.out.print("\nWould you like to play again? (y/n): ");	
+		choice = scanner.next();	
+		}while(choice.equalsIgnoreCase("y"));
 		
 	}
 
