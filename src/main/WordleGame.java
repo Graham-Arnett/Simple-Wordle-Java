@@ -21,9 +21,28 @@ public class WordleGame {
 		String choice;
 		Random random = new Random();
 		
+		String[] answers = {"FLOAT","BLAME","SHARP","IDIOT","MORON","GLOAT","CLOAK","BROKE","FIXED","PUSHY"};
 		do 
 		{
-			
+		int pickedAnswer = random.nextInt(0,10);
+		String answer = answers[pickedAnswer];
+		while(!victory) 
+		{
+			System.out.print("\nYour guess: ");
+			String entry = scanner.next();
+			int strLength = entry.length();
+			if(entry.length() < 5 || entry.length() > 5) 
+			{
+				System.out.println("All answers are precisely 5 letters long, this will not increment turns or provide a hint. Guess again.");
+			}
+			for(int counter = 0; counter < answer.length(); counter++) 
+			{
+				if(entry[counter] == answer[counter])
+				{
+					
+				}
+			}
+		}
 		System.out.print("\nWould you like to play again? (y/n): ");	
 		choice = scanner.next();	
 		}while(choice.equalsIgnoreCase("y"));
