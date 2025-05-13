@@ -19,7 +19,7 @@ public class WordleGame {
 		String ANSI_BLUE = "\u001B[34m";
 		int turns = 0;
 		
-		boolean victory = false;//ok, in java its boolean not bool, noted
+		boolean gameEnd = false;//ok, in java its boolean not bool, noted
 		String choice;
 		Random random = new Random();
 		
@@ -28,7 +28,7 @@ public class WordleGame {
 		{
 		int pickedAnswer = random.nextInt(0,10);
 		String answer = answers[pickedAnswer];
-		while(!victory) 
+		while(!gameEnd) 
 		{
 			System.out.print("\nYour guess: ");
 			String entry = scanner.next();
@@ -53,7 +53,13 @@ public class WordleGame {
 			if(entry.equals(answer)) 
 			{
 				System.out.println("YOU WON!");
-				victory = true;
+				gameEnd = true;
+			}
+			else if (turns == 6) 
+			{
+				System.out.println("\nYou have LOST!\n\n");
+				gameEnd = true;
+			}
 			}
 			turns++;
 		}
