@@ -26,11 +26,13 @@ public class WordleGame {
 		String[] answers = {"FLOAT","BLAME","SHARP","IDIOT","MORON","GLOAT","CLOAK","BROKE","FIXED","PUSHY"};
 		do 
 		{
-		int pickedAnswer = random.nextInt(0,10);
-		String answer = answers[pickedAnswer];
+		
 		while(!gameEnd) 
 		{
 			System.out.print("\nYour guess: ");
+			int pickedAnswer = random.nextInt(0,10);
+			String answer = answers[pickedAnswer];
+			System.out.print(answer);
 			String entry = scanner.next();
 			int strLength = entry.length();
 			if(entry.length() < 5 || entry.length() > 5) 
@@ -62,7 +64,7 @@ public class WordleGame {
 			}
 			}
 			turns++;
-		}
+		
 		System.out.print("You took " + turns + "turns.");
 		System.out.print("\nWould you like to play again? (y/n): ");	
 		choice = scanner.next();	
