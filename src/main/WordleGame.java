@@ -55,7 +55,7 @@ public class WordleGame {
 					System.out.print(ANSI_YELLOW);
 				}
 			}
-			if(entry.equals(answer)) 
+			if(entry.equals(answer.equalsIgnoreCase(entry))) 
 			{
 				System.out.println("YOU WON!");
 				gameEnd = true;
