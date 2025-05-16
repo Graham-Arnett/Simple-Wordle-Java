@@ -42,6 +42,11 @@ public class WordleGame {
 			{
 				System.out.println("All answers are precisely 5 letters long, this will not increment turns or provide a hint. Guess again.");
 			}
+			if(entry.equals(answer.equalsIgnoreCase(entry))) 
+			{
+				System.out.println("YOU WON!");
+				gameEnd = true;
+			}
 			for(int counter = 0; counter < answer.length(); counter++) 
 			{
 				char answChar = answer.charAt(counter);
@@ -55,12 +60,8 @@ public class WordleGame {
 					System.out.print(ANSI_YELLOW);
 				}
 			}
-			if(entry.equals(answer.equalsIgnoreCase(entry))) 
-			{
-				System.out.println("YOU WON!");
-				gameEnd = true;
-			}
-			else if (turns == 6) 
+			
+			if (turns == 6) 
 			{
 				System.out.println("\nYou have LOST!\n\n");
 				gameEnd = true;
